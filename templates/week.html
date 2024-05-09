@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="./static/style.css" />
+	</head>
+	<body>
+		<header>
+			<div class="container">
+				<nav>
+					<ul>
+						<li><a href="/">Etusivu</a></li>
+						<li><a href="/week">Viikko</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<div class="container">
+			<div class="section">
+				<h1>Viikko {{ week_number }}</h1>
+				<div class="grid">
+					<div class="lunch-box">
+						<h2>Taste - Tarmola</h2>
+						{% for day in taste_lunch %}
+						<h3>{{ day[0] }}</h3>
+						{% for line in day[1:] %} {{ line }}<br />
+						{% endfor %} {% endfor %}
+					</div>
+					<div class="lunch-box">
+						<h2>Taste - Keskusta</h2>
+						{% for day in taste_daynight %}
+						<h3>{{ day[0] }}</h3>
+						{% for line in day[1:] %} {{ line }}<br />
+						{% endfor %} {% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
